@@ -39,6 +39,7 @@ INITIAL_STOCKS = [
 
 # Event templates with causality
 EVENT_TEMPLATES = [
+    # === AI SECTOR EVENTS ===
     {
         "title": "Major AI Breakthrough in Natural Language Understanding",
         "description": "Researchers announce a revolutionary AI model that achieves human-level language comprehension.",
@@ -58,6 +59,44 @@ EVENT_TEMPLATES = [
         "probability": 0.4
     },
     {
+        "title": "AI Chip Shortage Crisis",
+        "description": "Global supply chain disruption causes severe shortage of AI processors, delaying projects worldwide.",
+        "event_type": "crisis",
+        "affected_sectors": ["AI", "Robotics", "Telecom"],
+        "impact_multipliers": {"AI": 0.78, "Robotics": 0.82, "Telecom": 0.92},
+        "causality_tags": ["AI", "supply-chain", "hardware"],
+        "probability": 0.25
+    },
+    {
+        "title": "AI Safety Incident Raises Concerns",
+        "description": "High-profile AI system malfunction causes significant disruption, triggering calls for stricter oversight.",
+        "event_type": "crisis",
+        "affected_sectors": ["AI", "Finance", "Robotics"],
+        "impact_multipliers": {"AI": 0.82, "Finance": 0.93, "Robotics": 0.88},
+        "causality_tags": ["AI", "safety", "regulation"],
+        "probability": 0.2
+    },
+    {
+        "title": "Open-Source AI Model Disrupts Market",
+        "description": "Powerful open-source AI model release threatens proprietary AI company business models.",
+        "event_type": "breakthrough",
+        "affected_sectors": ["AI"],
+        "impact_multipliers": {"AI": 0.90},
+        "causality_tags": ["AI", "competition", "disruption"],
+        "probability": 0.35
+    },
+    {
+        "title": "AI Ethics Board Established Globally",
+        "description": "International consortium creates unified AI ethics standards, affecting development practices.",
+        "event_type": "regulation",
+        "affected_sectors": ["AI", "Pharma", "Finance"],
+        "impact_multipliers": {"AI": 0.92, "Pharma": 0.96, "Finance": 0.97},
+        "causality_tags": ["AI", "ethics", "regulation"],
+        "probability": 0.3
+    },
+
+    # === QUANTUM COMPUTING EVENTS ===
+    {
         "title": "Quantum Computing Achieves Practical Supremacy",
         "description": "First quantum computer solves real-world problem faster than any classical computer.",
         "event_type": "breakthrough",
@@ -67,6 +106,44 @@ EVENT_TEMPLATES = [
         "probability": 0.25
     },
     {
+        "title": "Quantum Cryptography Standard Adopted",
+        "description": "Industry adopts quantum-resistant encryption as new standard.",
+        "event_type": "regulation",
+        "affected_sectors": ["Quantum", "Finance", "Telecom"],
+        "impact_multipliers": {"Quantum": 1.18, "Finance": 1.06, "Telecom": 1.04},
+        "causality_tags": ["quantum", "security", "standard"],
+        "probability": 0.25
+    },
+    {
+        "title": "Quantum Computing Setback: Stability Issues",
+        "description": "Leading quantum computing labs report unexpected decoherence problems, delaying commercialization.",
+        "event_type": "crisis",
+        "affected_sectors": ["Quantum", "AI"],
+        "impact_multipliers": {"Quantum": 0.75, "AI": 0.95},
+        "causality_tags": ["quantum", "technology", "setback"],
+        "probability": 0.3
+    },
+    {
+        "title": "Quantum Computing Patent War Erupts",
+        "description": "Major tech companies engage in legal battles over fundamental quantum computing patents.",
+        "event_type": "crisis",
+        "affected_sectors": ["Quantum"],
+        "impact_multipliers": {"Quantum": 0.88},
+        "causality_tags": ["quantum", "legal", "competition"],
+        "probability": 0.25
+    },
+    {
+        "title": "Room-Temperature Quantum Processor Demonstrated",
+        "description": "Breakthrough eliminates need for expensive cooling systems, making quantum computing more accessible.",
+        "event_type": "breakthrough",
+        "affected_sectors": ["Quantum", "AI", "Finance"],
+        "impact_multipliers": {"Quantum": 1.35, "AI": 1.12, "Finance": 1.08},
+        "causality_tags": ["quantum", "breakthrough", "accessibility"],
+        "probability": 0.15
+    },
+
+    # === CYBERSECURITY & PRIVACY EVENTS ===
+    {
         "title": "Cybersecurity Crisis: Major Encryption Vulnerability",
         "description": "Critical vulnerability discovered in widely-used encryption protocols.",
         "event_type": "crisis",
@@ -75,6 +152,35 @@ EVENT_TEMPLATES = [
         "causality_tags": ["security", "cryptography", "crisis"],
         "probability": 0.2
     },
+    {
+        "title": "Data Privacy Scandal",
+        "description": "Major tech companies face scrutiny over data handling practices.",
+        "event_type": "crisis",
+        "affected_sectors": ["AI", "Telecom", "Finance"],
+        "impact_multipliers": {"AI": 0.88, "Telecom": 0.85, "Finance": 0.92},
+        "causality_tags": ["privacy", "regulation", "data"],
+        "probability": 0.3
+    },
+    {
+        "title": "Global Ransomware Attack Wave",
+        "description": "Coordinated ransomware attacks hit critical infrastructure, driving demand for security solutions.",
+        "event_type": "crisis",
+        "affected_sectors": ["Finance", "Telecom", "Energy"],
+        "impact_multipliers": {"Finance": 0.85, "Telecom": 0.88, "Energy": 0.82},
+        "causality_tags": ["security", "crisis", "cyber"],
+        "probability": 0.25
+    },
+    {
+        "title": "Zero-Day Exploit Market Crackdown",
+        "description": "International law enforcement shuts down major vulnerability trading platforms.",
+        "event_type": "regulation",
+        "affected_sectors": ["AI", "Finance", "Telecom"],
+        "impact_multipliers": {"AI": 1.05, "Finance": 1.08, "Telecom": 1.06},
+        "causality_tags": ["security", "regulation", "enforcement"],
+        "probability": 0.2
+    },
+
+    # === PHARMACEUTICAL & BIOTECH EVENTS ===
     {
         "title": "Breakthrough in Gene Therapy",
         "description": "New gene editing technique shows promise in curing genetic diseases.",
@@ -94,6 +200,53 @@ EVENT_TEMPLATES = [
         "probability": 0.15
     },
     {
+        "title": "AI-Powered Drug Discovery Success",
+        "description": "AI system discovers effective treatment for major disease.",
+        "event_type": "breakthrough",
+        "affected_sectors": ["AI", "Pharma"],
+        "impact_multipliers": {"AI": 1.10, "Pharma": 1.15},
+        "causality_tags": ["AI", "pharma", "medical"],
+        "probability": 0.3
+    },
+    {
+        "title": "Clinical Trial Failure Rocks Biotech Sector",
+        "description": "Multiple high-profile drug candidates fail Phase 3 trials, causing investor concern.",
+        "event_type": "crisis",
+        "affected_sectors": ["Pharma"],
+        "impact_multipliers": {"Pharma": 0.75},
+        "causality_tags": ["pharma", "setback", "trials"],
+        "probability": 0.3
+    },
+    {
+        "title": "Personalized Medicine Platform Approved",
+        "description": "Regulatory approval for AI-driven personalized treatment platform transforms healthcare delivery.",
+        "event_type": "breakthrough",
+        "affected_sectors": ["Pharma", "AI"],
+        "impact_multipliers": {"Pharma": 1.20, "AI": 1.12},
+        "causality_tags": ["pharma", "AI", "personalization"],
+        "probability": 0.25
+    },
+    {
+        "title": "Drug Pricing Regulation Enacted",
+        "description": "New legislation caps pharmaceutical prices, impacting industry profit margins.",
+        "event_type": "regulation",
+        "affected_sectors": ["Pharma"],
+        "impact_multipliers": {"Pharma": 0.80},
+        "causality_tags": ["pharma", "regulation", "pricing"],
+        "probability": 0.35
+    },
+    {
+        "title": "Longevity Drug Shows Promising Results",
+        "description": "Clinical trials demonstrate significant life extension in humans, creating massive market potential.",
+        "event_type": "breakthrough",
+        "affected_sectors": ["Pharma"],
+        "impact_multipliers": {"Pharma": 1.30},
+        "causality_tags": ["pharma", "longevity", "breakthrough"],
+        "probability": 0.15
+    },
+
+    # === ENERGY SECTOR EVENTS ===
+    {
         "title": "Renewable Energy Cost Breakthrough",
         "description": "Solar power becomes cheaper than fossil fuels across all markets.",
         "event_type": "breakthrough",
@@ -112,23 +265,52 @@ EVENT_TEMPLATES = [
         "probability": 0.2
     },
     {
-        "title": "Global Economic Recession",
-        "description": "Major economies enter recession, affecting global markets.",
-        "event_type": "crisis",
-        "affected_sectors": ["Finance", "Telecom", "Energy", "Robotics"],
-        "impact_multipliers": {"Finance": 0.75, "Telecom": 0.90, "Energy": 0.85, "Robotics": 0.88},
-        "causality_tags": ["economy", "crisis", "recession"],
+        "title": "Energy Storage Revolution",
+        "description": "New battery technology increases capacity by 10x at lower cost.",
+        "event_type": "breakthrough",
+        "affected_sectors": ["Energy", "Robotics"],
+        "impact_multipliers": {"Energy": 1.25, "Robotics": 1.10},
+        "causality_tags": ["energy", "battery", "innovation"],
         "probability": 0.25
     },
     {
-        "title": "Autonomous Vehicle Approval",
-        "description": "Regulators approve fully autonomous vehicles for public roads.",
+        "title": "Grid Failure Exposes Infrastructure Weaknesses",
+        "description": "Major power grid collapse highlights vulnerability of aging energy infrastructure.",
+        "event_type": "crisis",
+        "affected_sectors": ["Energy", "Telecom", "AI"],
+        "impact_multipliers": {"Energy": 0.82, "Telecom": 0.90, "AI": 0.93},
+        "causality_tags": ["energy", "infrastructure", "crisis"],
+        "probability": 0.25
+    },
+    {
+        "title": "Carbon Tax Implementation",
+        "description": "Major economies implement aggressive carbon pricing, accelerating renewable energy adoption.",
         "event_type": "regulation",
-        "affected_sectors": ["Robotics", "AI", "Telecom"],
-        "impact_multipliers": {"Robotics": 1.20, "AI": 1.12, "Telecom": 1.08},
-        "causality_tags": ["autonomous", "regulation", "transportation"],
+        "affected_sectors": ["Energy"],
+        "impact_multipliers": {"Energy": 1.15},
+        "causality_tags": ["energy", "regulation", "climate"],
+        "probability": 0.35
+    },
+    {
+        "title": "Rare Earth Minerals Supply Crisis",
+        "description": "Geopolitical tensions disrupt supply of critical minerals for batteries and renewable energy.",
+        "event_type": "crisis",
+        "affected_sectors": ["Energy", "Robotics", "Telecom"],
+        "impact_multipliers": {"Energy": 0.75, "Robotics": 0.80, "Telecom": 0.88},
+        "causality_tags": ["energy", "supply-chain", "geopolitical"],
         "probability": 0.3
     },
+    {
+        "title": "Wireless Power Transmission Breakthrough",
+        "description": "Efficient long-range wireless power transmission becomes commercially viable.",
+        "event_type": "breakthrough",
+        "affected_sectors": ["Energy", "Telecom", "Robotics"],
+        "impact_multipliers": {"Energy": 1.22, "Telecom": 1.15, "Robotics": 1.10},
+        "causality_tags": ["energy", "wireless", "innovation"],
+        "probability": 0.2
+    },
+
+    # === TELECOMMUNICATIONS EVENTS ===
     {
         "title": "Satellite Internet Constellation Completed",
         "description": "Global satellite internet network provides worldwide coverage.",
@@ -139,39 +321,207 @@ EVENT_TEMPLATES = [
         "probability": 0.35
     },
     {
-        "title": "Data Privacy Scandal",
-        "description": "Major tech companies face scrutiny over data handling practices.",
+        "title": "6G Technology Standard Finalized",
+        "description": "Next-generation wireless technology promises 100x faster speeds and near-zero latency.",
+        "event_type": "breakthrough",
+        "affected_sectors": ["Telecom", "AI", "Robotics"],
+        "impact_multipliers": {"Telecom": 1.20, "AI": 1.08, "Robotics": 1.10},
+        "causality_tags": ["telecom", "wireless", "standard"],
+        "probability": 0.3
+    },
+    {
+        "title": "Undersea Cable Damage Disrupts Global Internet",
+        "description": "Multiple submarine cable cuts cause widespread internet outages and connectivity issues.",
         "event_type": "crisis",
-        "affected_sectors": ["AI", "Telecom", "Finance"],
-        "impact_multipliers": {"AI": 0.88, "Telecom": 0.85, "Finance": 0.92},
-        "causality_tags": ["privacy", "regulation", "data"],
-        "probability": 0.3
+        "affected_sectors": ["Telecom", "Finance", "AI"],
+        "impact_multipliers": {"Telecom": 0.85, "Finance": 0.90, "AI": 0.92},
+        "causality_tags": ["telecom", "infrastructure", "crisis"],
+        "probability": 0.2
     },
     {
-        "title": "Quantum Cryptography Standard Adopted",
-        "description": "Industry adopts quantum-resistant encryption as new standard.",
+        "title": "Net Neutrality Regulations Overturned",
+        "description": "New regulations allow ISPs to prioritize traffic, creating market opportunities and concerns.",
         "event_type": "regulation",
-        "affected_sectors": ["Quantum", "Finance", "Telecom"],
-        "impact_multipliers": {"Quantum": 1.18, "Finance": 1.06, "Telecom": 1.04},
-        "causality_tags": ["quantum", "security", "standard"],
+        "affected_sectors": ["Telecom", "Finance"],
+        "impact_multipliers": {"Telecom": 1.12, "Finance": 1.04},
+        "causality_tags": ["telecom", "regulation", "policy"],
         "probability": 0.25
     },
     {
-        "title": "AI-Powered Drug Discovery Success",
-        "description": "AI system discovers effective treatment for major disease.",
+        "title": "Quantum Internet Test Network Operational",
+        "description": "First quantum communication network demonstrates unhackable data transmission.",
         "event_type": "breakthrough",
-        "affected_sectors": ["AI", "Pharma"],
-        "impact_multipliers": {"AI": 1.10, "Pharma": 1.15},
-        "causality_tags": ["AI", "pharma", "medical"],
+        "affected_sectors": ["Telecom", "Quantum", "Finance"],
+        "impact_multipliers": {"Telecom": 1.18, "Quantum": 1.22, "Finance": 1.10},
+        "causality_tags": ["telecom", "quantum", "security"],
+        "probability": 0.2
+    },
+
+    # === ROBOTICS & AUTOMATION EVENTS ===
+    {
+        "title": "Autonomous Vehicle Approval",
+        "description": "Regulators approve fully autonomous vehicles for public roads.",
+        "event_type": "regulation",
+        "affected_sectors": ["Robotics", "AI", "Telecom"],
+        "impact_multipliers": {"Robotics": 1.20, "AI": 1.12, "Telecom": 1.08},
+        "causality_tags": ["autonomous", "regulation", "transportation"],
         "probability": 0.3
     },
     {
-        "title": "Energy Storage Revolution",
-        "description": "New battery technology increases capacity by 10x at lower cost.",
+        "title": "Humanoid Robot Mass Production Begins",
+        "description": "First general-purpose humanoid robots enter mass production for service industries.",
         "event_type": "breakthrough",
-        "affected_sectors": ["Energy", "Robotics"],
-        "impact_multipliers": {"Energy": 1.25, "Robotics": 1.10},
-        "causality_tags": ["energy", "battery", "innovation"],
+        "affected_sectors": ["Robotics", "AI"],
+        "impact_multipliers": {"Robotics": 1.25, "AI": 1.10},
+        "causality_tags": ["robotics", "automation", "production"],
         "probability": 0.25
+    },
+    {
+        "title": "Autonomous Delivery Drone Accident",
+        "description": "Fatal accident involving delivery drone triggers safety review and regulatory scrutiny.",
+        "event_type": "crisis",
+        "affected_sectors": ["Robotics", "AI"],
+        "impact_multipliers": {"Robotics": 0.78, "AI": 0.88},
+        "causality_tags": ["robotics", "safety", "regulation"],
+        "probability": 0.25
+    },
+    {
+        "title": "Warehouse Automation Adoption Surges",
+        "description": "Labor shortages drive massive adoption of robotic warehouse systems across industries.",
+        "event_type": "breakthrough",
+        "affected_sectors": ["Robotics", "AI"],
+        "impact_multipliers": {"Robotics": 1.18, "AI": 1.08},
+        "causality_tags": ["robotics", "automation", "logistics"],
+        "probability": 0.35
+    },
+    {
+        "title": "Robot Rights Movement Gains Momentum",
+        "description": "Ethical debates over AI consciousness and robot rights influence legislation.",
+        "event_type": "regulation",
+        "affected_sectors": ["Robotics", "AI"],
+        "impact_multipliers": {"Robotics": 0.92, "AI": 0.94},
+        "causality_tags": ["robotics", "ethics", "regulation"],
+        "probability": 0.2
+    },
+
+    # === FINANCIAL SECTOR EVENTS ===
+    {
+        "title": "Global Economic Recession",
+        "description": "Major economies enter recession, affecting global markets.",
+        "event_type": "crisis",
+        "affected_sectors": ["Finance", "Telecom", "Energy", "Robotics"],
+        "impact_multipliers": {"Finance": 0.75, "Telecom": 0.90, "Energy": 0.85, "Robotics": 0.88},
+        "causality_tags": ["economy", "crisis", "recession"],
+        "probability": 0.25
+    },
+    {
+        "title": "Central Bank Digital Currency Launch",
+        "description": "Major central banks launch official digital currencies, transforming payment systems.",
+        "event_type": "breakthrough",
+        "affected_sectors": ["Finance", "AI"],
+        "impact_multipliers": {"Finance": 1.15, "AI": 1.06},
+        "causality_tags": ["finance", "currency", "digital"],
+        "probability": 0.3
+    },
+    {
+        "title": "Cryptocurrency Market Collapse",
+        "description": "Major cryptocurrency exchanges fail, causing massive losses and regulatory crackdown.",
+        "event_type": "crisis",
+        "affected_sectors": ["Finance", "AI"],
+        "impact_multipliers": {"Finance": 0.82, "AI": 0.95},
+        "causality_tags": ["finance", "crypto", "crisis"],
+        "probability": 0.3
+    },
+    {
+        "title": "AI-Driven Trading Algorithms Banned",
+        "description": "Regulators restrict high-frequency algorithmic trading to prevent market manipulation.",
+        "event_type": "regulation",
+        "affected_sectors": ["Finance", "AI"],
+        "impact_multipliers": {"Finance": 0.90, "AI": 0.88},
+        "causality_tags": ["finance", "AI", "regulation"],
+        "probability": 0.25
+    },
+    {
+        "title": "Global Financial Transaction Tax Implemented",
+        "description": "Coordinated international effort introduces small tax on all financial transactions.",
+        "event_type": "regulation",
+        "affected_sectors": ["Finance"],
+        "impact_multipliers": {"Finance": 0.85},
+        "causality_tags": ["finance", "taxation", "regulation"],
+        "probability": 0.2
+    },
+    {
+        "title": "Decentralized Finance Platform Hacked",
+        "description": "Major DeFi protocol exploited for billions, raising security and regulatory concerns.",
+        "event_type": "crisis",
+        "affected_sectors": ["Finance", "AI"],
+        "impact_multipliers": {"Finance": 0.78, "AI": 0.92},
+        "causality_tags": ["finance", "security", "crypto"],
+        "probability": 0.3
+    },
+
+    # === CROSS-SECTOR & GEOPOLITICAL EVENTS ===
+    {
+        "title": "Trade War Escalation",
+        "description": "Major economic powers impose tariffs on technology goods, disrupting global supply chains.",
+        "event_type": "crisis",
+        "affected_sectors": ["AI", "Quantum", "Robotics", "Telecom"],
+        "impact_multipliers": {"AI": 0.82, "Quantum": 0.80, "Robotics": 0.85, "Telecom": 0.88},
+        "causality_tags": ["geopolitical", "trade", "crisis"],
+        "probability": 0.3
+    },
+    {
+        "title": "International Climate Agreement Strengthened",
+        "description": "Enhanced global climate commitments drive massive investment in clean technology.",
+        "event_type": "regulation",
+        "affected_sectors": ["Energy", "Robotics", "AI"],
+        "impact_multipliers": {"Energy": 1.20, "Robotics": 1.08, "AI": 1.05},
+        "causality_tags": ["climate", "regulation", "sustainability"],
+        "probability": 0.35
+    },
+    {
+        "title": "Global Skills Gap Crisis",
+        "description": "Severe shortage of technical talent threatens innovation across all tech sectors.",
+        "event_type": "crisis",
+        "affected_sectors": ["AI", "Quantum", "Robotics", "Pharma"],
+        "impact_multipliers": {"AI": 0.88, "Quantum": 0.85, "Robotics": 0.90, "Pharma": 0.92},
+        "causality_tags": ["labor", "education", "crisis"],
+        "probability": 0.25
+    },
+    {
+        "title": "Universal Basic Income Pilot Programs Expand",
+        "description": "Multiple countries implement UBI in response to automation, affecting consumer behavior.",
+        "event_type": "regulation",
+        "affected_sectors": ["Robotics", "AI", "Finance"],
+        "impact_multipliers": {"Robotics": 1.10, "AI": 1.08, "Finance": 1.12},
+        "causality_tags": ["policy", "automation", "social"],
+        "probability": 0.2
+    },
+    {
+        "title": "Space Resource Mining Rights Established",
+        "description": "International treaty defines property rights for asteroid mining, opening new markets.",
+        "event_type": "regulation",
+        "affected_sectors": ["Robotics", "Energy", "AI"],
+        "impact_multipliers": {"Robotics": 1.15, "Energy": 1.12, "AI": 1.06},
+        "causality_tags": ["space", "resources", "regulation"],
+        "probability": 0.15
+    },
+    {
+        "title": "Global Intellectual Property Reform",
+        "description": "Major changes to patent law affect technology development and competition.",
+        "event_type": "regulation",
+        "affected_sectors": ["AI", "Quantum", "Pharma", "Robotics"],
+        "impact_multipliers": {"AI": 0.95, "Quantum": 0.93, "Pharma": 0.90, "Robotics": 0.94},
+        "causality_tags": ["IP", "regulation", "innovation"],
+        "probability": 0.25
+    },
+    {
+        "title": "Breakthrough in Room-Temperature Superconductors",
+        "description": "Discovery enables lossless power transmission and revolutionary computing advances.",
+        "event_type": "breakthrough",
+        "affected_sectors": ["Energy", "Quantum", "AI", "Telecom"],
+        "impact_multipliers": {"Energy": 1.35, "Quantum": 1.30, "AI": 1.20, "Telecom": 1.15},
+        "causality_tags": ["materials", "physics", "breakthrough"],
+        "probability": 0.1
     }
 ]
