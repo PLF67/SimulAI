@@ -78,8 +78,8 @@ class GameManager:
                     # Generate news from the event
                     await self.news_generator.generate_news_from_event(game_id, event)
 
-            # Generate some sector news (1-3 news items)
-            num_news = random.randint(1, 3)
+            # Generate diverse sector news (3-6 news items per quarter for rich content)
+            num_news = random.randint(3, 6)
             result = await self.db.execute(select(Stock))
             stocks = result.scalars().all()
             sectors = list(set(stock.sector for stock in stocks))
